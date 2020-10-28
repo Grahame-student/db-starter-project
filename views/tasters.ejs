@@ -29,28 +29,31 @@
 <div class="container">
     <div class="row col-md-12 col-md-offset-2 custyle mx-auto">
         <h1 class="mx-auto"> 🍷 Wine Tasters 🍷</h1>
-    <table class="table table-striped custab">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Twitter</th>
-            <th>Tastings#</th>
-
-        </tr>
-    </thead>
-            <tr>
-                <td>1</td>
-                <td>Joe Appleton</td>
-                <td>@joeappleton18</td>
-                <td>100</td>
-                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
-            </tr>
-          
-    </table>
+        <table class="table table-striped custab">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Twitter</th>
+                    <th>Tastings#</th>
+                </tr>
+            </thead>
+            <% tasters.forEach(function(taster){ %>
+                <tr>
+                    <td><%= taster._id %></td>
+                    <td><%= taster.name %></td>
+                    <td><%= taster.twitter %></td>
+                    <td><%= taster.tastings %></td>
+                    <td class="text-center">
+                        <a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+                        <a href="/tasters/delete/<%= taster._id %>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span>Del</a>
+                    </td>
+                </tr>
+            <% }); %>
+        </table>
     </div>
-    
-    
+
+
 
     <%- include('common/footer') -%>
   </body>
