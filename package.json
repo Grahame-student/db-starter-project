@@ -15,6 +15,12 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "ejs": "^3.1.5",
+    "eslint": "^7.12.1",
+    "eslint-config-standard": "^15.0.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.2",
     "express": "^4.17.1",
     "loading-cli": "^1.1.0",
     "mongodb": "^3.6.2",
