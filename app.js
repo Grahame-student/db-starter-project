@@ -9,7 +9,7 @@ const {WEB_PORT, MONGODB_URI} = process.env;
 
 const tasterController = require("./controllers/taster");
 
-mongoose.connect(MONGODB_URI, {useNewUrlParser: true});
+mongoose.connect(MONGODB_URI, {useUnifiedTopology: true, useNewUrlParser: true});
 
 mongoose.connection.on("error", (err) => {
     console.error(err);
