@@ -7,7 +7,7 @@ on:
   push:
   pull_request:
 
-jobs:      
+jobs:
   super-lint:
     # Name the Job
     name: Lint code base

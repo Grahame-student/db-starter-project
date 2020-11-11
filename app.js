@@ -12,11 +12,11 @@ const tasterController = require("./controllers/taster");
 mongoose.connect(MONGODB_URI, {useUnifiedTopology: true, useNewUrlParser: true});
 
 mongoose.connection.on("error", (err) => {
-    console.error(err);
-    console.log(
-        "MongoDB connection error. Please make sure MongoDB is running.",
-    );
-    process.exit();
+  console.error(err);
+  console.log(
+      "MongoDB connection error. Please make sure MongoDB is running.",
+  );
+  process.exit();
 })
 
 /**
@@ -25,7 +25,7 @@ mongoose.connection.on("error", (err) => {
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
-    res.render("index");
+  res.render("index");
 });
 
 app.get("/tasters", tasterController.list);
@@ -33,5 +33,5 @@ app.get("/tasters", tasterController.list);
 app.get("/tasters/delete/:id", tasterController.delete);
 
 app.listen(WEB_PORT, () => {
-    console.log(`Example app listening at http://localhost:${WEB_PORT}`);
+  console.log(`Example app listening at http://localhost:${WEB_PORT}`);
 });

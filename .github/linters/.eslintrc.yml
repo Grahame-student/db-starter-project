@@ -39,5 +39,5 @@ plugins:
 # Rules #
 #########
 rules:
-    semi: ['error', 'always']
+  semi: [ 'error', 'always' ]
 extends: "standard"

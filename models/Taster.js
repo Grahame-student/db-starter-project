@@ -3,12 +3,12 @@ const {Schema} = mongoose;
 
 const tasterSchema = new Schema(
     {
-        twitter: String,
-        tastings: Number,
-        name: String,
+      twitter: String,
+      tastings: Number,
+      name: String,
     },
     {
-        timestamps: true
+      timestamps: true
     }
 );
 
