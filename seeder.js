@@ -67,19 +67,20 @@ async function main() {
     const wineTasters = await wineTastersRef.toArray();
     await db.collection("tasters").insertMany(wineTasters);
 
-    /** Our final data manipulation is to reference each document in the
-     * tastings collection to a taster id
+    /** This data manipulation is to reference each document in the
+     * tastings collection to a taster id. Further to this we also take the opportunity to
+     * tidy up points (converting it to a int) and regions, adding them to a an array
      */
 
     const updatedWineTastersRef = db.collection("tasters").find({});
     const updatedWineTasters = await updatedWineTastersRef.toArray();
-    updatedWineTasters.forEach(async ({_id, name}) => {
-      await db.collection("tastings").updateMany({taster_name: name}, [
+    updatedWineTasters.forEach(async ({ _id, name }) => {
+      await db.collection("tastings").updateMany({ taster_name: name }, [
         {
           $set: {
             taster_id: _id,
             regions: ["$region_1", "$region_2"],
-            points: {$toInt: "$points"},
+            points: { $toInt: "$points" },
           },
         },
       ]);
