@@ -6,7 +6,6 @@ exports.list = async (req, res) => {
   const page = parseInt(req.query.page) || 1;
 
 
-
   try {
     const tastings = await Tasting.find({}).skip((perPage * page) - perPage).limit(limit);
     const count = await Tasting.find({}).count();
@@ -19,7 +18,7 @@ exports.list = async (req, res) => {
     });
   } catch (e) {
     console.log(e);
-    res.status(404).send({ message: "could not list tastings" });
+    res.status(404).send({message: "could not list tastings"});
   }
 };
 

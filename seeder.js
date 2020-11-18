@@ -1,4 +1,4 @@
-const { MongoClient } = require("mongodb");
+const {MongoClient} = require("mongodb");
 const fs = require("fs").promises;
 const path = require("path");
 const loading = require("loading-cli");
@@ -44,21 +44,21 @@ async function main() {
      */
 
     const wineTastersRef = await db.collection("tastings").aggregate([
-      { $match: { taster_name: { $ne: null } } },
+      {$match: {taster_name: {$ne: null}}},
       {
         $group: {
           _id: "$taster_name",
-          social: { $push: "$taster_twitter_handle" },
-          total_tastings: { $sum: 1 },
+          social: {$push: "$taster_twitter_handle"},
+          total_tastings: {$sum: 1},
         },
       },
       {
         $project: {
-          twitter: { $first: "$social" },
+          twitter: {$first: "$social"},
           tastings: "$total_tastings",
         },
       },
-      { $set: { name: "$_id", _id: "$total_tastings" } },
+      {$set: {name: "$_id", _id: "$total_tastings"}},
     ]);
     /**
      * Below, we output the results of our aggregate into a
@@ -73,13 +73,13 @@ async function main() {
 
     const updatedWineTastersRef = db.collection("tasters").find({});
     const updatedWineTasters = await updatedWineTastersRef.toArray();
-    updatedWineTasters.forEach(async ({ _id, name }) => {
-      await db.collection("tastings").updateMany({ taster_name: name }, [
+    updatedWineTasters.forEach(async ({_id, name}) => {
+      await db.collection("tastings").updateMany({taster_name: name}, [
         {
           $set: {
             taster_id: _id,
             regions: ["$region_1", "$region_2"],
-            points: { $toInt: "$points" },
+            points: {$toInt: "$points"},
           },
         },
       ]);
@@ -89,20 +89,20 @@ async function main() {
        * placed them in an array
        */
       await db
-        .collection("tastings")
-        .updateMany({}, { $unset: { region_1: "", region_2: " " } });
+          .collection("tastings")
+          .updateMany({}, {$unset: {region_1: "", region_2: " "}});
 
       /**
        * Finally, we remove nulls regions from our collection of arrays
        * */
       await db
-        .collection("tastings")
-        .updateMany({ regions: { $all: [null] } }, [
-          { $set: { regions: [{ $arrayElemAt: ["$regions", 0] }] } },
-        ]);
+          .collection("tastings")
+          .updateMany({regions: {$all: [null]}}, [
+            {$set: {regions: [{$arrayElemAt: ["$regions", 0]}]}},
+          ]);
       load.stop();
       console.info(
-        `Wine collection set up! 🍷🍷🍷🍷🍷🍷🍷 \n I've also created a tasters collection for you 🥴 🥴 🥴`
+          `Wine collection set up! 🍷🍷🍷🍷🍷🍷🍷 \n I've also created a tasters collection for you 🥴 🥴 🥴`
       );
       process.exit();
     });

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b2d1d13a-e236-4ea8-9ca2-943294278d6d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/taster.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/taster.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/tasting.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/tasting.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Taster.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Taster.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Tasting.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Tasting.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seeder.js" beforeDir="false" afterPath="$PROJECT_DIR$/seeder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/common/footer.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/common/footer.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/common/header.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/common/header.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/create-taster.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/create-taster.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/tasters.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/tasters.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/tastings.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/tastings.ejs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1jVZWzUoyXlsrg6TgxbUQpGUbGj" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../solent2Public/myPracticeCourseWork/week 6/webfacadeexample2" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\db-starter-project\db-starter-project\controllers" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Node.js.Wine">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Seeder" type="NodeJSConfigurationType" path-to-js-file="seeder.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="Wine" type="NodeJSConfigurationType" path-to-js-file="app.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Node.js.Seeder" />
+      <item itemvalue="Node.js.Wine" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b2d1d13a-e236-4ea8-9ca2-943294278d6d" name="Default Changelist" comment="" />
+      <created>1603891254268</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603891254268</updated>
+      <workItem from="1603891255355" duration="12391000" />
+      <workItem from="1604480908893" duration="712000" />
+      <workItem from="1605103565111" duration="1744000" />
+      <workItem from="1605108567160" duration="5371000" />
+      <workItem from="1605612008064" duration="39000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="416" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603895423440">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="416" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/8.-2160.2560.1400@0.0.1920.1040" timestamp="1603895423440" />
+    <state x="691" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605109181745">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="691" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/8.-2160.2560.1400@0.0.1920.1040" timestamp="1605109181745" />
+    <state x="997" y="-1788" key="FileChooserDialogImpl" timestamp="1605612046707">
+      <screen x="8" y="-2160" width="2560" height="1400" />
+    </state>
+    <state x="742" y="276" key="FileChooserDialogImpl/0.0.1920.1040/8.-2160.2560.1400@0.0.1920.1040" timestamp="1605108524432" />
+    <state x="997" y="-1788" key="FileChooserDialogImpl/0.0.1920.1040/8.-2160.2560.1400@8.-2160.2560.1400" timestamp="1605612046707" />
+    <state width="1878" height="282" key="GridCell.Tab.0.bottom" timestamp="1605113942926">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/8.-2160.2560.1400@0.0.1920.1040" timestamp="1605113942926" />
+    <state width="1878" height="282" key="GridCell.Tab.0.center" timestamp="1605113942926">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/8.-2160.2560.1400@0.0.1920.1040" timestamp="1605113942926" />
+    <state width="1878" height="282" key="GridCell.Tab.0.left" timestamp="1605113942926">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/8.-2160.2560.1400@0.0.1920.1040" timestamp="1605113942926" />
+    <state width="1878" height="282" key="GridCell.Tab.0.right" timestamp="1605113942926">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/8.-2160.2560.1400@0.0.1920.1040" timestamp="1605113942926" />
+    <state x="462" y="165" key="SettingsEditor" timestamp="1603902827504">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="462" y="165" key="SettingsEditor/0.0.1920.1040/8.-2160.2560.1400@0.0.1920.1040" timestamp="1603902827504" />
+  </component>
+</project>
