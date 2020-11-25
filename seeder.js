@@ -19,10 +19,7 @@ async function main() {
      * If existing records then delete the current collections
      */
     if (results) {
-      console.info("deleting collection");
-      await db.collection("tastings").drop();
-      await db.collection("tasters").drop();
-      await db.collection("regions").drop();
+      db.dropDatabase();
     }
 
     /**
@@ -131,16 +128,75 @@ async function removeOldRegionFields(database) {
       .updateMany({regions: {$all: [null]}}, [
         {$set: {regions: [{$arrayElemAt: ["$regions", 0]}]}},
       ]);
-}
+    });
 
-async function createRegions(database)
-{
-  await database.collection("tastings").aggregate([
-    {$unwind: "$regions"},
-    {$group: {_id: "$regions"}},
-    {$project: {name: "$_id", "_id": 0}},
-    {$out: "regions"}
-  ]).toArray();
+
+    /**
+     * we can get rid of region_1/2 off our root document, since we've
+     * placed them in an array
+     */
+    await db
+      .collection("tastings")
+      .updateMany({}, { $unset: { region_1: "", region_2: " " } });
+
+    /**
+     * Finally, we remove nulls regions from our collection of arrays
+     * */
+    await db
+      .collection("tastings")
+      .updateMany({ regions: { $all: [null] } }, [
+        { $set: { regions: [{ $arrayElemAt: ["$regions", 0] }] } },
+      ])
+
+
+    db.collection("tastings").aggregate([
+      { $group: { _id: "$variety" } },
+      { $project: { name: "$_id", "_id": 0 } },
+      { $out: "varieties" }
+    ]).toArray();
+
+    db.collection("tastings").aggregate([
+      { $group: { _id: "$country" } },
+      { $project: { name: "$_id", "_id": 0 } },
+      { $out: "countries" }
+    ]).toArray()
+
+
+
+    await db.collection("tastings").aggregate([
+      { $group: { _id: "$province" } },
+      { $project: { name: "$_id", "_id": 0 } },
+      { $out: "provinces" }
+    ]).toArray()
+
+    await db.collection("tastings").aggregate([
+      { $unwind: "$regions" },
+      { $group: { _id: "$regions" } },
+      { $project: { name: '$_id', _id: 0 } },
+      { $out: "regions" }
+    ]).toArray();
+
+
+    await db.collection("tastings").aggregate([
+      { $unwind: "$regions" },
+      { $group: { _id: "$regions" } },
+      { $project: { name: "$_id", "_id": 0 } },
+      { $out: "regions" }
+    ]).toArray() 
+
+
+
+    load.stop();
+    console.info(
+      `Wine collection set up! 🍷🍷🍷🍷🍷🍷🍷 \n I've also created a tasters collection for you 🥴 🥴 🥴`
+    );
+
+
+    process.exit();
+  } catch (error) {
+    console.error("error:", error);
+    process.exit();
+  }
 }
 
 main();
