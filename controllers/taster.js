@@ -4,7 +4,7 @@ exports.list = async (req, res) => {
   const message = req.query.message;
   try {
     const tasters = await Taster.find({});
-    res.render("tasters", {tasters: tasters, message:message});
+    res.render("tasters", {tasters: tasters, message: message});
   } catch (e) {
     res.status(404).send({message: "could not list tasters"});
   }
@@ -22,7 +22,7 @@ exports.delete = async (req, res) => {
   }
 };
 
-exports.create =  async (req, res) => {
+exports.create = async (req, res) => {
   let taster = new Taster({name: req.body.name, twitter: req.body.twitter});
   try {
     await taster.save();

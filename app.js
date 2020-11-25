@@ -44,7 +44,7 @@ app.get("/create-taster", (req, res) => {
 });
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.urlencoded({extended: false}));
 app.get("/tasters", tasterController.list);
 app.get("/tasters/delete/:id", tasterController.delete);
 app.post("/create-taster", tasterController.create);

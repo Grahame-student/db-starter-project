@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2d1d13a-e236-4ea8-9ca2-943294278d6d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/taster.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/taster.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/tasting.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/tasting.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Taster.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Taster.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Tasting.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Tasting.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seeder.js" beforeDir="false" afterPath="$PROJECT_DIR$/seeder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/common/footer.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/common/footer.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/common/header.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/common/header.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/create-taster.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/create-taster.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/tasters.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/tasters.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/tastings.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/tastings.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +42,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../solent2Public/myPracticeCourseWork/week 6/webfacadeexample2" />
+    <property name="last_opened_file_path" value="$USER_HOME$/OneDrive - Solent University/COM528 - AE2 - Underground" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -59,20 +51,7 @@
       <recent name="C:\db-starter-project\db-starter-project\controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.Wine">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Node.js.Seeder">
     <configuration name="Seeder" type="NodeJSConfigurationType" path-to-js-file="seeder.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -97,6 +76,8 @@
       <workItem from="1605103565111" duration="1744000" />
       <workItem from="1605108567160" duration="5371000" />
       <workItem from="1605612008064" duration="39000" />
+      <workItem from="1605712854105" duration="5288000" />
+      <workItem from="1606218922885" duration="56000" />
     </task>
     <servers />
   </component>
@@ -112,27 +93,28 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="691" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/8.-2160.2560.1400@0.0.1920.1040" timestamp="1605109181745" />
-    <state x="997" y="-1788" key="FileChooserDialogImpl" timestamp="1605612046707">
-      <screen x="8" y="-2160" width="2560" height="1400" />
+    <state x="742" y="276" key="FileChooserDialogImpl" timestamp="1606218978926">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="742" y="276" key="FileChooserDialogImpl/0.0.1920.1040/8.-2160.2560.1400@0.0.1920.1040" timestamp="1605108524432" />
     <state x="997" y="-1788" key="FileChooserDialogImpl/0.0.1920.1040/8.-2160.2560.1400@8.-2160.2560.1400" timestamp="1605612046707" />
-    <state width="1878" height="282" key="GridCell.Tab.0.bottom" timestamp="1605113942926">
+    <state x="742" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606218978926" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1605718642145">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/8.-2160.2560.1400@0.0.1920.1040" timestamp="1605113942926" />
-    <state width="1878" height="282" key="GridCell.Tab.0.center" timestamp="1605113942926">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/8.-2160.2560.1400@0.0.1920.1040" timestamp="1605718642145" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1605718642145">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/8.-2160.2560.1400@0.0.1920.1040" timestamp="1605113942926" />
-    <state width="1878" height="282" key="GridCell.Tab.0.left" timestamp="1605113942926">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/8.-2160.2560.1400@0.0.1920.1040" timestamp="1605718642145" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1605718642145">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/8.-2160.2560.1400@0.0.1920.1040" timestamp="1605113942926" />
-    <state width="1878" height="282" key="GridCell.Tab.0.right" timestamp="1605113942926">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/8.-2160.2560.1400@0.0.1920.1040" timestamp="1605718642145" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1605718642145">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/8.-2160.2560.1400@0.0.1920.1040" timestamp="1605113942926" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/8.-2160.2560.1400@0.0.1920.1040" timestamp="1605718642145" />
     <state x="462" y="165" key="SettingsEditor" timestamp="1603902827504">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
