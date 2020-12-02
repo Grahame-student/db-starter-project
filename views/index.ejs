@@ -2,25 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="utf-8"/>
-        <meta
-                name="viewport"
-                content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <meta name="description" content=""/>
         <title>World Wines</title>
-
-        <link
-                rel="canonical"
-                href="https://getbootstrap.com/docs/4.5/examples/album/"
-        />
-
-        <!-- Bootstrap core CSS -->
-        <link
-                rel="stylesheet"
-                href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-                integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-                crossorigin="anonymous"
-        />
+        <%- include('common/bootstrap'); -%>
 
         <style>
           .bd-placeholder-img {
@@ -44,64 +29,29 @@
     <body>
         <%- include('common/header'); -%>
 
-    <main role="main">
-      <section class="jumbotron text-center">
-        <div class="container">
-          <h1>The Largest Collection of Wine Reviews in the World</h1>
-          <p class="lead text-muted">Search, Explore and Favourite.</p>
-          <h2>
-            <strong><%= totalTastings %></strong> reviews from wines originating
-            from <strong><%= totalCountries %></strong> different countries.
-            Lovingly crafted by <strong><%= totalTasters %></strong> tasters
-          </h2>
-        </div>
-      </section>
+        <main role="main">
+            <section class="jumbotron text-center">
+                <div class="container">
+                    <h1>The Largest Collection of Wine Reviews in the World</h1>
+                    <p class="lead text-muted">Search, Explore and Favourite.</p>
+                    <h2>
+                        <strong><%= totalTastings %></strong> reviews from wines originating
+                        from <strong><%= totalCountries %></strong> different countries.
+                        Lovingly crafted by <strong><%= totalTasters %></strong> tasters
+                    </h2>
+                </div>
+            </section>
 
-      <div class="album py-5 bg-light">
-        <div class="container">
-          <div class="row">
-            <% tasterCountSummary.forEach(taster => { %>
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <svg
-                  class="bd-placeholder-img card-img-top"
-                  width="100%"
-                  height="225"
-                  xmlns="http://www.w3.org/2000/svg"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
-                  role="img"
-                  aria-label="Placeholder: Joe Appleton"
-                >
-                  <title>Joe Appleton</title>
-                  <rect width="100%" height="100%" fill="#55595c" />
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                    <%= taster.name %>
-                  </text>
-                </svg>
-                <div class="card-body">
-                  <p class="text-center">
-                    <strong> <%= taster.total %> Reviews</strong>
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div class="btn-group">
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        View
-                      </button>
+            <div class="album py-5 bg-light">
+                <div class="container">
+                    <div class="row">
+                        <% tasterCountSummary.forEach(taster => { %>
+                            <%- include('common/taster-card', {taster: taster}); -%>
+                        <% }) %>
                     </div>
-                  </div>
                 </div>
             </div>
-            <% }) %>
-          </div>
-        </div>
-      </div>
-    </main>
+        </main>
 
         <%- include('common/footer') -%>
     </body>

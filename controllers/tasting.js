@@ -4,7 +4,7 @@ const Taster = require("../models/Taster");
 const Region = require("../models/Region");
 const Province = require("../models/Province");
 const bodyParser = require("body-parser");
-const { findById } = require("../models/Country");
+const {findById} = require("../models/Country");
 
 
 exports.list = async (req, res) => {
@@ -26,7 +26,7 @@ exports.list = async (req, res) => {
       message: message
     });
   } catch (e) {
-    res.status(404).send({ message: "could not list tastings" });
+    res.status(404).send({message: "could not list tastings"});
   }
 };
 
@@ -49,7 +49,7 @@ exports.edit = async (req, res) => {
   } catch (e) {
     console.log(e)
     if (e.errors) {
-      res.render('create-tasting', { errors: e.errors })
+      res.render('create-tasting', {errors: e.errors})
       return;
     }
     res.status(404).send({
@@ -74,7 +74,7 @@ exports.create = async (req, res) => {
     res.redirect('/tastings/?message=tasting has been created')
   } catch (e) {
     if (e.errors) {
-      res.render('create-tasting', { errors: e.errors })
+      res.render('create-tasting', {errors: e.errors})
       return;
     }
     return res.status(400).send({
@@ -109,8 +109,7 @@ exports.delete = async (req, res) => {
     res.redirect("/tastings");
   } catch (e) {
     res.status(404).send({
-      message: `could not delete  record ${id}.`,
+      message: `could not delete record ${id}.`,
     });
   }
 };
-

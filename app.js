@@ -7,14 +7,13 @@ const bodyParser = require("body-parser");
 const countriesModel = require("./models/Country");
 
 
-
-
 /**
  * Controllers (route handlers).
  */
 const tasterController = require("./controllers/taster");
 const tastingController = require("./controllers/tasting");
 const homeController = require("./controllers/home");
+const userController = require("./controllers/user");
 
 const app = express();
 app.set("view engine", "ejs");
@@ -23,18 +22,18 @@ app.set("view engine", "ejs");
  * notice above we are using dotenv. We can now pull the values from our environment
  */
 
-const { WEB_PORT, MONGODB_URI } = process.env;
+const {WEB_PORT, MONGODB_URI} = process.env;
 
 /**
  * connect to database
  */
 
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI, {useNewUrlParser: true});
 mongoose.connection.on("error", (err) => {
   console.error(err);
   console.log(
-    "MongoDB connection error. Please make sure MongoDB is running.",
-    chalk.red("✗")
+      "MongoDB connection error. Please make sure MongoDB is running.",
+      chalk.red("✗")
   );
   process.exit();
 });
@@ -44,12 +43,15 @@ mongoose.connection.on("error", (err) => {
  */
 app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 
 app.get("/", homeController.list);
 
+app.get("/join", userController.join);
+app.post("/create-user", userController.create);
+
 app.get("/create-taster", (req, res) => {
-  res.render("create-taster", { errors: {} });
+  res.render("create-taster", {errors: {}});
 });
 
 app.post("/create-taster", tasterController.create);
@@ -71,7 +73,7 @@ app.get("/tastings/delete/:id", tastingController.delete);
 
 app.listen(WEB_PORT, () => {
   console.log(
-    `Example app listening at http://localhost:${WEB_PORT}`,
-    chalk.green("✓")
+      `Example app listening at http://localhost:${WEB_PORT}`,
+      chalk.green("✓")
   );
 });
