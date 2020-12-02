@@ -20,26 +20,21 @@ app.set('view engine', 'ejs');
 
 const { PORT, MONGODB_URI } = process.env;
 
-const tasterController = require('./controllers/taster');
-
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 mongoose.connection.on('error', (err) => {
   console.error(err);
-  console.log(
-      'MongoDB connection error. Please make sure MongoDB is running.',
-      chalk.red('✗')
-  );
+  console.log('MongoDB connection error. Please make sure MongoDB is running.', chalk.red('✗'));
   process.exit();
 });
 
 /***
- * We are applying our middlewear
+ * We are applying our middleware
  */
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(expressSession({ secret: 'foo barr', cookie: { expires: new Date(253402300000000) } }))
+app.use(expressSession({ secret: 'foo barr', cookie: { expires: new Date(253402300000000) } }));
 
 
 app.use('*', async (req, res, next) => {
@@ -78,11 +73,9 @@ app.get('/tasters/delete/:id', tasterController.delete);
 app.get('/tasters/update/:id', tasterController.edit);
 app.post('/tasters/update/:id', tasterController.update);
 
-
 app.get('/create-tasting', tastingController.createView);
 app.post('/create-tasting', tastingController.create);
 app.get('/update-tasting/:id', tastingController.edit);
-
 
 app.get('/tastings', tastingController.list);
 app.get('/tastings/delete/:id', tastingController.delete);
