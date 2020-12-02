@@ -36,7 +36,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(expressSession({ secret: 'foo barr', cookie: { expires: new Date(253402300000000) } }));
 
-
 app.use('*', async (req, res, next) => {
   global.user = false;
   if (req.session.userID && !global.user) {
@@ -90,10 +89,9 @@ app.get('/login', (req, res) => {
 });
 app.post('/login', userController.login);
 
-
 app.listen(PORT, () => {
   console.log(
-      `Example app listening at http://localhost:${PORT}`,
-      chalk.green('✓')
+    `Example app listening at http://localhost:${PORT}`,
+    chalk.green('✓')
   );
 });
