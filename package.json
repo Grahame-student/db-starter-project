@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": "14.x"
   },
   "keywords": [],
   "author": "",
@@ -23,7 +27,7 @@
     "eslint-plugin-standard": "^4.0.2",
     "express": "^4.17.1",
     "loading-cli": "^1.1.0",
-    "mongodb": "^3.6.2",
+    "mongodb": "^3.6.3",
     "mongoose": "^5.10.11"
   }
 }
