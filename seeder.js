@@ -1,5 +1,5 @@
 require("dotenv").config();
-const { MongoClient } = require("mongodb");
+const {MongoClient} = require("mongodb");
 const fs = require("fs").promises;
 const path = require("path");
 const loading = require("loading-cli");
@@ -44,12 +44,12 @@ async function main() {
      */
 
     const wineTastersRef = await db.collection("tastings").aggregate([
-      { $match: { taster_name: { $ne: null } } },
+      {$match: {taster_name: {$ne: null}}},
       {
         $group: {
           _id: "$taster_name",
-          twitter: { $first: "$taster_twitter_handle" },
-          tastings: { $sum: 1 },
+          twitter: {$first: "$taster_twitter_handle"},
+          tastings: {$sum: 1},
         },
       },
       {
@@ -75,13 +75,13 @@ async function main() {
 
     const updatedWineTastersRef = db.collection("tasters").find({});
     const updatedWineTasters = await updatedWineTastersRef.toArray();
-    updatedWineTasters.forEach(async ({ _id, name }) => {
-      await db.collection("tastings").updateMany({ taster_name: name }, [
+    updatedWineTasters.forEach(async ({_id, name}) => {
+      await db.collection("tastings").updateMany({taster_name: name}, [
         {
           $set: {
             taster_id: _id,
             regions: ["$region_1", "$region_2"],
-            points: { $toInt: "$points" },
+            points: {$toInt: "$points"},
           },
         },
       ]);
@@ -93,59 +93,57 @@ async function main() {
      * placed them in an array
      */
     await db
-      .collection("tastings")
-      .updateMany({}, { $unset: { region_1: "", region_2: " " } });
+        .collection("tastings")
+        .updateMany({}, {$unset: {region_1: "", region_2: " "}});
 
     /**
      * Finally, we remove nulls regions from our collection of arrays
      * */
     await db
-      .collection("tastings")
-      .updateMany({ regions: { $all: [null] } }, [
-        { $set: { regions: [{ $arrayElemAt: ["$regions", 0] }] } },
-      ])
+        .collection("tastings")
+        .updateMany({regions: {$all: [null]}}, [
+          {$set: {regions: [{$arrayElemAt: ["$regions", 0]}]}},
+        ])
 
 
     db.collection("tastings").aggregate([
-      { $group: { _id: "$variety" } },
-      { $project: { name: "$_id", "_id": 0 } },
-      { $out: "varieties" }
+      {$group: {_id: "$variety"}},
+      {$project: {name: "$_id", "_id": 0}},
+      {$out: "varieties"}
     ]).toArray();
 
     db.collection("tastings").aggregate([
-      { $group: { _id: "$country" } },
-      { $project: { name: "$_id", "_id": 0 } },
-      { $out: "countries" }
+      {$group: {_id: "$country"}},
+      {$project: {name: "$_id", "_id": 0}},
+      {$out: "countries"}
     ]).toArray()
 
 
-
     await db.collection("tastings").aggregate([
-      { $group: { _id: "$province" } },
-      { $project: { name: "$_id", "_id": 0 } },
-      { $out: "provinces" }
+      {$group: {_id: "$province"}},
+      {$project: {name: "$_id", "_id": 0}},
+      {$out: "provinces"}
     ]).toArray()
 
     await db.collection("tastings").aggregate([
-      { $unwind: "$regions" },
-      { $group: { _id: "$regions" } },
-      { $project: { name: '$_id', _id: 0 } },
-      { $out: "regions" }
+      {$unwind: "$regions"},
+      {$group: {_id: "$regions"}},
+      {$project: {name: '$_id', _id: 0}},
+      {$out: "regions"}
     ]).toArray();
 
 
     await db.collection("tastings").aggregate([
-      { $unwind: "$regions" },
-      { $group: { _id: "$regions" } },
-      { $project: { name: "$_id", "_id": 0 } },
-      { $out: "regions" }
+      {$unwind: "$regions"},
+      {$group: {_id: "$regions"}},
+      {$project: {name: "$_id", "_id": 0}},
+      {$out: "regions"}
     ]).toArray()
-
 
 
     load.stop();
     console.info(
-      `Wine collection set up! 🍷🍷🍷🍷🍷🍷🍷 \n I've also created a tasters collection for you 🥴 🥴 🥴`
+        `Wine collection set up! 🍷🍷🍷🍷🍷🍷🍷 \n I've also created a tasters collection for you 🥴 🥴 🥴`
     );
 
 

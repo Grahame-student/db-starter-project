@@ -25,12 +25,12 @@ const {PORT, MONGODB_URI} = process.env;
 
 const tasterController = require("./controllers/taster");
 
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI, {useNewUrlParser: true});
 mongoose.connection.on("error", (err) => {
   console.error(err);
   console.log(
-    "MongoDB connection error. Please make sure MongoDB is running.",
-    chalk.red("✗")
+      "MongoDB connection error. Please make sure MongoDB is running.",
+      chalk.red("✗")
   );
   process.exit();
 });
@@ -40,9 +40,9 @@ mongoose.connection.on("error", (err) => {
  */
 app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 
-app.use(expressSession({ secret: 'foo barr', cookie: { expires: new Date(253402300000000) } }))
+app.use(expressSession({secret: 'foo barr', cookie: {expires: new Date(253402300000000)}}))
 
 
 app.use("*", async (req, res, next) => {
@@ -71,7 +71,7 @@ app.get("/logout", async (req, res) => {
 })
 
 app.get("/create-taster", authMiddleware, (req, res) => {
-  res.render("create-taster", { errors: {} });
+  res.render("create-taster", {errors: {}});
 });
 
 app.post("/create-taster", tasterController.create);
@@ -91,19 +91,19 @@ app.get("/tastings", tastingController.list);
 app.get("/tastings/delete/:id", tastingController.delete);
 
 app.get("/join", (req, res) => {
-  res.render('create-user', { errors: {} })
+  res.render('create-user', {errors: {}})
 });
 
 app.post("/join", userController.create);
 app.get("/login", (req, res) => {
-  res.render('login-user', { errors: {} })
+  res.render('login-user', {errors: {}})
 });
 app.post("/login", userController.login);
 
 
 app.listen(PORT, () => {
   console.log(
-    `Example app listening at http://localhost:${PORT}`,
-    chalk.green("✓")
+      `Example app listening at http://localhost:${PORT}`,
+      chalk.green("✓")
   );
 });
