@@ -43,15 +43,15 @@ app.use('*', async (req, res, next) => {
     global.user = user;
   }
   next();
-})
+});
 
 const authMiddleware = async (req, res, next) => {
   const user = await User.findById(req.session.userID);
   if (!user) {
     return res.redirect('/');
   }
-  next()
-}
+  next();
+};
 
 app.get('/', homeController.list);
 
@@ -59,7 +59,7 @@ app.get('/logout', async (req, res) => {
   req.session.destroy();
   global.user = false;
   res.redirect('/');
-})
+});
 
 app.get('/create-taster', authMiddleware, (req, res) => {
   res.render('create-taster', { errors: {} });
@@ -80,12 +80,12 @@ app.get('/tastings', tastingController.list);
 app.get('/tastings/delete/:id', tastingController.delete);
 
 app.get('/join', (req, res) => {
-  res.render('create-user', { errors: {} })
+  res.render('create-user', { errors: {} });
 });
 
 app.post('/join', userController.create);
 app.get('/login', (req, res) => {
-  res.render('login-user', { errors: {} })
+  res.render('login-user', { errors: {} });
 });
 app.post('/login', userController.login);
 

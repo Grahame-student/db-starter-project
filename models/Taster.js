@@ -5,7 +5,7 @@ const tasterSchema = new Schema(
   {
     twitter: String,
     tastings: Number,
-    name: String,
+    name: String
   },
   {
     timestamps: true

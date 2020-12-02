@@ -10,7 +10,7 @@ const loading = require('loading-cli');
 const { MONGODB_URI } = process.env;
 const client = new MongoClient(MONGODB_URI);
 
-async function main() {
+async function main () {
   try {
     await client.connect();
     const db = client.db();
@@ -48,8 +48,8 @@ async function main() {
         $group: {
           _id: '$taster_name',
           twitter: { $first: '$taster_twitter_handle' },
-          tastings: { $sum: 1 },
-        },
+          tastings: { $sum: 1 }
+        }
       },
       {
         $project: {
@@ -57,8 +57,8 @@ async function main() {
           name: '$_id',
           twitter: '$twitter',
           tastings: '$tastings'
-        },
-      },
+        }
+      }
     ]);
     /**
      * Below, we output the results of our aggregate into a
@@ -80,9 +80,9 @@ async function main() {
           $set: {
             taster_id: _id,
             regions: ['$region_1', '$region_2'],
-            points: { $toInt: '$points' },
-          },
-        },
+            points: { $toInt: '$points' }
+          }
+        }
       ]);
     });
 
@@ -100,26 +100,26 @@ async function main() {
     await db
       .collection('tastings')
       .updateMany({ regions: { $all: [null] } }, [
-        { $set: { regions: [{ $arrayElemAt: ['$regions', 0] }] } },
-      ])
+        { $set: { regions: [{ $arrayElemAt: ['$regions', 0] }] } }
+      ]);
 
-    db.collection('tastings').aggregate([
+    await db.collection('tastings').aggregate([
       { $group: { _id: '$variety' } },
-      { $project: { name: '$_id', '_id': 0 } },
+      { $project: { name: '$_id', _id: 0 } },
       { $out: 'varieties' }
     ]).toArray();
 
-    db.collection('tastings').aggregate([
+    await db.collection('tastings').aggregate([
       { $group: { _id: '$country' } },
-      { $project: { name: '$_id', '_id': 0 } },
+      { $project: { name: '$_id', _id: 0 } },
       { $out: 'countries' }
-    ]).toArray()
+    ]).toArray();
 
     await db.collection('tastings').aggregate([
       { $group: { _id: '$province' } },
-      { $project: { name: '$_id', '_id': 0 } },
+      { $project: { name: '$_id', _id: 0 } },
       { $out: 'provinces' }
-    ]).toArray()
+    ]).toArray();
 
     await db.collection('tastings').aggregate([
       { $unwind: '$regions' },
@@ -131,13 +131,13 @@ async function main() {
     await db.collection('tastings').aggregate([
       { $unwind: '$regions' },
       { $group: { _id: '$regions' } },
-      { $project: { name: '$_id', '_id': 0 } },
+      { $project: { name: '$_id', _id: 0 } },
       { $out: 'regions' }
-    ]).toArray()
+    ]).toArray();
 
     load.stop();
     console.info(
-      `Wine collection set up! 🍷🍷🍷🍷🍷🍷🍷 \n I've also created a tasters collection for you 🥴 🥴 🥴`
+      'Wine collection set up! 🍷🍷🍷🍷🍷🍷🍷 \n I\'ve also created a tasters collection for you 🥴 🥴 🥴'
     );
 
     process.exit();
